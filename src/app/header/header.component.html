@@ -1,0 +1,20 @@
+<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+  <a class="navbar-brand" href="#">Angular Ögren</a>
+  <button class="navbar-toggler" type="button">
+    <span (click)="navbarToggle()" class="navbar-toggler-icon"></span>
+  </button>
+  <div [ngClass]="{'show': navbarToggled}" class="navbar-collapse collapse">
+    <div class="navbar-nav">
+      <a class="nav-item nav-link active" href="#">Ana Sayfa</a>
+
+      <li [ngClass]="{'show': dropdownToggled}" class="nav-item dropdown">
+        <a (click)="dropdownToggle()" class="nav-link dropdown-toggle" href="#">
+          Açılır Link
+        </a>
+        <div [ngClass]="{'show': dropdownToggled}"  class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="#">Örnek Link</a>
+        </div>
+      </li>
+    </div>
+  </div>
+</nav>
