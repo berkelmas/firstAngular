@@ -5,14 +5,15 @@
   </button>
   <div [ngClass]="{'show': navbarToggled}" class="navbar-collapse collapse">
     <div class="navbar-nav">
-      <a class="nav-item nav-link active" href="#">Ana Sayfa</a>
+      <a class="nav-item nav-link active" href="#" (click)="changePage('recipes-list')">Recipes List</a>
 
       <li [ngClass]="{'show': dropdownToggled}" class="nav-item dropdown">
         <a (click)="dropdownToggle()" class="nav-link dropdown-toggle" href="#">
           Açılır Link
         </a>
         <div [ngClass]="{'show': dropdownToggled}"  class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item" href="#">Örnek Link</a>
+          <a class="dropdown-item" href="#" (click)="changePage('shopping-list')">Shopping List</a>
+          <a class="dropdown-item" href="#" (click)="changePage('recipes-detail')">Recipes Detail</a>
         </div>
       </li>
     </div>

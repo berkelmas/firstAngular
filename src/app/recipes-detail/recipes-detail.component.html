@@ -1,3 +1,12 @@
-<p>
-  recipes-detail works!
-</p>
+<h2 *ngIf="currentRecipeDetail">{{currentRecipeDetail.name}}</h2>
+<div class="dropdown">
+  <button (click)="buttonDropdown()" class="btn btn-primary dropdown-toggle">Manage Recipes</button>
+  <div [ngClass]="{'show': buttonDropdownToggled}" class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    <a class="dropdown-item" href="#">Action</a>
+    <a class="dropdown-item" href="#">Another action</a>
+    <a class="dropdown-item" href="#">Something else here</a>
+  </div>
+</div>
+
+<h5 *ngIf="currentRecipeDetail">{{currentRecipeDetail.description}}</h5>
+<h5>ingredients</h5>

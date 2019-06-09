@@ -1,0 +1,36 @@
+.recipe {
+
+  &-image {
+    object-fit: cover;
+    width: 5rem;
+    height: 5rem;
+    border-radius: 10px;
+
+    order : 3;
+  }
+
+  &-title {
+    color : darken(DeepSkyBlue, 25%);
+  }
+
+  &-description {
+    font-size: 14px;
+  }
+
+}
+
+.recipes-list {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &-details {
+    display: flex;
+    flex-direction: column;
+    margin-left : .5rem;
+  }
+
+  &:hover {
+    background-color: #f7f7f7;
+  }
+}

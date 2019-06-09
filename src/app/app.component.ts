@@ -7,4 +7,15 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'deneme';
+  currentPage: string;
+  currentRecipe: {};
+
+  getPage(page: string) {
+    this.currentPage = page;
+    console.log(`Navigated To: ${page}`);
+  }
+
+  getSelectedRecipe(recipe: {}) {
+    this.currentRecipe= recipe;
+  }
 }

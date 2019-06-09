@@ -1,8 +1,30 @@
-<div class="row">
-  <div class="col-md-5">
-    <p>recipes-list works!</p>
+
+  <div class="row justify-content-start">
+    <div class="col-md-7">
+      <div class="row justify-content-center">
+        <div class="col-md-8">
+          <div class="add-recipe-container">
+            <a class="btn btn-success add-recipe-button">Add Recipe</a>
+          </div>
+          <ul class="list-group mt-3">
+            <app-recipes-item
+              *ngFor="let recipe of recipes"
+              [recipesSingleItem]="recipe"
+              (click)="getItem(recipe)"
+              ></app-recipes-item>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-5 mt-5" *ngIf="selectedRecipe; else infoText;">
+      <app-recipes-detail [currentRecipeDetail]="selectedRecipe"></app-recipes-detail>
+    </div>
+
+    <!-- Shown before any recipe is selected. -->
+    <ng-template #infoText>
+      <div class="col-md-5 mt-5">
+        <p>Please select a recipe</p>
+      </div>
+    </ng-template>
   </div>
-  <div class="col-md-7">
-    <app-recipes-item></app-recipes-item>
-  </div>
-</div>

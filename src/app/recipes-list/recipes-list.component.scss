@@ -1,0 +1,15 @@
+.add-recipe {
+  &-container {
+    text-align: center;
+    margin-top: 1rem;
+  }
+
+  &-button {
+    color: white!important;
+    cursor: pointer;
+  }
+}
+
+app-recipes-item {
+  cursor: pointer;
+}

@@ -1,3 +1,7 @@
-<p>
-  recipes-item works! (I am in recipes list component)
-</p>
+<li class="recipes-list list-group-item">
+  <img [src]="recipesSingleItem.imagePath" class="recipe-image" alt="">
+  <div class="recipes-list-details">
+    <h5 class="recipe-title">{{ recipesSingleItem.name }}</h5>
+    <p class="recipe-description">{{ recipesSingleItem.description }}</p>
+  </div>
+</li>

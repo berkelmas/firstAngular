@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-header',
@@ -9,9 +9,14 @@ export class HeaderComponent implements OnInit {
   navbarToggled = false;
   dropdownToggled = false;
 
+  currentPage: string = "shopping-list";
+
+  @Output() passPage: EventEmitter<string> = new EventEmitter();
+
   constructor() { }
 
   ngOnInit() {
+    this.passPage.emit(this.currentPage)
   }
 
   navbarToggle() {
@@ -20,6 +25,11 @@ export class HeaderComponent implements OnInit {
 
   dropdownToggle() {
     this.dropdownToggled = !this.dropdownToggled;
+  }
+
+  changePage(page: string) {
+    this.currentPage = page;
+    this.passPage.emit(this.currentPage);
   }
 
 }
